@@ -1,14 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
+import { Letters } from "./Letters";
+import { Numbers } from "./Numbers";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="letters" element={<Letters />} />
+          <Route path="numbers" element={<Numbers />} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
