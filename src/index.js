@@ -8,19 +8,22 @@ import { Numbers } from "./Numbers";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import reportWebVitals from "./reportWebVitals";
+import { Main, AppLayout } from "./index.styles";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <div className="App">
+      <AppLayout>
         <Header />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="letters" element={<Letters />} />
-          <Route path="numbers" element={<Numbers />} />
-        </Routes>
+        <Main>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="letters" element={<Letters />} />
+            <Route path="numbers" element={<Numbers />} />
+          </Routes>
+        </Main>
         <Footer />
-      </div>
+      </AppLayout>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Wrapper, Title, HomeLink } from "./Header.styles";
 
 export const Header = () => {
   return (
-    <header>
-      <Link to="/">
-        <h2 className="header-title">Alphabet & Numbers Learning</h2>
-      </Link>
-    </header>
+    <Wrapper>
+      <HomeLink to="/">
+        <Title>Letters & Numbers Learning</Title>
+      </HomeLink>
+    </Wrapper>
   );
 };

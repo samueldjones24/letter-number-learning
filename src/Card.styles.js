@@ -8,8 +8,8 @@ export const CardWrapper = styled.div`
   width: 10rem;
   height: 10rem;
   background-color: #2979ff;
-  padding: 2.5rem 0.5rem;
-  border-radius: 4px;
+  padding: 3.5rem 0.5rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.1s ease;
 
@@ -35,8 +35,8 @@ export const CardWrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 75%;
-  width: 75%;
+  height: 100%;
+  width: 100%;
   margin: 1rem;
 `;
 

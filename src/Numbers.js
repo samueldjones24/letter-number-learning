@@ -1,7 +1,13 @@
+import { NUMBERS } from "./constants/numbers";
+import { Wrapper } from "./Numbers.styles";
+import { Card } from "./Card";
+
 export const Numbers = () => {
   return (
-    <main>
-      <h5>Numbers</h5>
-    </main>
+    <Wrapper>
+      {NUMBERS.map((letter) => {
+        return <Card item={letter} type="numbers" />;
+      })}
+    </Wrapper>
   );
 };

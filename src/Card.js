@@ -12,11 +12,13 @@ export const Card = ({ item, type }) => {
     });
 
   const keyPressed = useKeyPress(item.name.toLowerCase());
-  const inViewport = useIntersection(letterRef, "-250px");
+  const inViewport = useIntersection(letterRef, "0px");
 
   useEffect(() => {
     if (keyPressed && !inViewport) executeScroll();
   }, [keyPressed]);
+
+  const imageFileExtension = type === "letters" ? "png" : "jpg";
 
   return (
     <CardWrapper
@@ -28,7 +30,10 @@ export const Card = ({ item, type }) => {
       <Keyboard>{item.name}</Keyboard>
       <Example>{item.example}</Example>
       <Audio data-key={item.keycode} src={item.src} />
-      <Image src={`images/${type}/${item.name}.png`} alt={item.example} />
+      <Image
+        src={`images/${type}/${item.name}.${imageFileExtension}`}
+        alt={item.example}
+      />
     </CardWrapper>
   );
 };
