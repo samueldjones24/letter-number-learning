@@ -16,6 +16,7 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  line-height: 1.4;
 `;
 
 export const Text = styled.p`

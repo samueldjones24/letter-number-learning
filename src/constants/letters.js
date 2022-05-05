@@ -55,4 +55,10 @@ export const LETTERS = [
   },
   { name: "Y", example: "yak", keycode: "89", src: "sounds/letters/Y.wav" },
   { name: "Z", example: "zebra", keycode: "90", src: "sounds/letters/Z.wav" },
+  {
+    name: " ",
+    example: " ",
+    keycode: "32",
+    src: "",
+  },
 ];

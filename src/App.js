@@ -6,9 +6,8 @@ function App() {
     <>
       <TextWrapper>
         <Text>
-          Hello, MILA! <br /> <br />
-          Have fun learning your letters and numbers by pressing keys on the
-          keyboard. Lots of love, Daddy x
+          Have fun learning letters (A to Z) and numbers (0 to 9) by pressing
+          the keys on your keyboard.
         </Text>
       </TextWrapper>
       <TextWrapper>

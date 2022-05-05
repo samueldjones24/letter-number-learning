@@ -6,7 +6,7 @@ export const Numbers = () => {
   return (
     <Wrapper>
       {NUMBERS.map((letter) => {
-        return <Card item={letter} type="numbers" />;
+        return <Card item={letter} type="numbers" key={letter.name} />;
       })}
     </Wrapper>
   );

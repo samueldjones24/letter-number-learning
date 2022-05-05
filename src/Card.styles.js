@@ -42,6 +42,6 @@ export const Image = styled.img`
 
 export const Keyboard = styled.kbd``;
 
-export const Audio = styled.audio``;
+export const StyledAudio = styled.audio``;
 
 export const Example = styled.span``;

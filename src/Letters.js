@@ -3,12 +3,17 @@ import { Wrapper, LettersWrapper, SearchInput } from "./Letters.styles";
 import { Card } from "./Card";
 import { useEffect, useState } from "react";
 
+const SPACEBAR_KEYCODE = "32";
+
 export const Letters = () => {
-  const [letters, setLetters] = useState(LETTERS);
+  const initialLetters = LETTERS.filter(
+    (letter) => letter.keycode !== SPACEBAR_KEYCODE
+  );
+  const [letters, setLetters] = useState(initialLetters);
   const [searchInput, setSearchInput] = useState("");
 
-  const handleSearch = (value) => {
-    if (value === "") return setLetters(LETTERS);
+  const handleSearch = () => {
+    if (searchInput === "") return setLetters(initialLetters);
 
     const splitArray = searchInput.split("");
 
@@ -22,7 +27,7 @@ export const Letters = () => {
   };
 
   useEffect(() => {
-    handleSearch(searchInput);
+    handleSearch();
   }, [searchInput]);
 
   return (
@@ -32,10 +37,18 @@ export const Letters = () => {
         id="search-letters"
         value={searchInput.toUpperCase()}
         onChange={(e) => setSearchInput(e.target.value)}
+        placeholder="Try spelling your name..."
       />
       <LettersWrapper>
         {letters.map((letter) => {
-          return <Card item={letter} type="letters" />;
+          return (
+            <Card
+              item={letter}
+              type="letters"
+              key={letter.name}
+              spacebarKeycode={SPACEBAR_KEYCODE}
+            />
+          );
         })}
       </LettersWrapper>
     </Wrapper>

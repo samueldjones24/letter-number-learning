@@ -1,9 +1,17 @@
 import { useEffect, useRef } from "react";
-import { CardWrapper, Image, Keyboard, Example, Audio } from "./Card.styles";
+import {
+  CardWrapper,
+  Image,
+  Keyboard,
+  Example,
+  StyledAudio,
+} from "./Card.styles";
 import { useKeyPress, useIntersection } from "./hooks";
 
-export const Card = ({ item, type }) => {
+export const Card = ({ item, type, spacebarKeycode }) => {
+  const audioRef = useRef(new Audio(item.src));
   const letterRef = useRef(null);
+
   const executeScroll = () =>
     letterRef.current.scrollIntoView({
       behavior: "smooth",
@@ -15,7 +23,14 @@ export const Card = ({ item, type }) => {
   const inViewport = useIntersection(letterRef, "0px");
 
   useEffect(() => {
+    const audioRefCurrent = audioRef.current;
+
     if (keyPressed && !inViewport) executeScroll();
+    if (keyPressed && inViewport) audioRefCurrent.play();
+
+    return () => {
+      audioRefCurrent.pause();
+    };
   }, [keyPressed]);
 
   const imageFileExtension = type === "letters" ? "png" : "jpg";
@@ -27,13 +42,19 @@ export const Card = ({ item, type }) => {
       tabIndex={0}
       $keyPressed={keyPressed && inViewport}
     >
-      <Keyboard>{item.name}</Keyboard>
-      <Example>{item.example}</Example>
-      <Audio data-key={item.keycode} src={item.src} />
-      <Image
-        src={`images/${type}/${item.name}.${imageFileExtension}`}
-        alt={item.example}
-      />
+      {item.keycode !== spacebarKeycode ? (
+        <>
+          <Keyboard>{item.name}</Keyboard>
+          <Example>{item.example}</Example>
+          <StyledAudio data-key={item.keycode} src={item.src} ref={audioRef} />
+          <Image
+            src={`images/${type}/${item.name}.${imageFileExtension}`}
+            alt={item.example}
+          />
+        </>
+      ) : (
+        <></>
+      )}
     </CardWrapper>
   );
 };
