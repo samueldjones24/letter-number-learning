@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <Wrapper>
       <HomeLink to="/">
-        <Title>Letters & Numbers Learning</Title>
+        <Title>Letter and Number Learning</Title>
       </HomeLink>
     </Wrapper>
   );

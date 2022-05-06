@@ -11,6 +11,25 @@ export const Footer = () => {
           rel="noopener noreferrer"
         >
           Alphabetimals
+        </Link>{" "}
+        &{" "}
+        <Link
+          href="https://stock.adobe.com/uk/contributor/208793437/olga?load_type=author&prev_url=detail"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Olga
+        </Link>
+      </Text>
+      <Text>|</Text>
+      <Text>
+        Code: ©{" "}
+        <Link
+          href="https://twitter.com/samueldjones"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Samuel Jones
         </Link>
       </Text>
     </Wrapper>

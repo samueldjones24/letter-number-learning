@@ -25,15 +25,19 @@ export const Card = ({ item, type, spacebarKeycode }) => {
   useEffect(() => {
     const audioRefCurrent = audioRef.current;
 
-    if (keyPressed && !inViewport) executeScroll();
+    if (keyPressed && !inViewport) {
+      executeScroll();
+      audioRefCurrent.play();
+    }
     if (keyPressed && inViewport) audioRefCurrent.play();
 
     return () => {
       audioRefCurrent.pause();
+      audioRefCurrent.currentTime = 0;
     };
-  }, [keyPressed]);
+  }, [inViewport, keyPressed]);
 
-  const imageFileExtension = type === "letters" ? "png" : "jpg";
+  const isNumber = type === "numbers";
 
   return (
     <CardWrapper
@@ -41,15 +45,21 @@ export const Card = ({ item, type, spacebarKeycode }) => {
       id={item.keycode}
       tabIndex={0}
       $keyPressed={keyPressed && inViewport}
+      $isNumber={isNumber}
     >
       {item.keycode !== spacebarKeycode ? (
         <>
-          <Keyboard>{item.name}</Keyboard>
-          <Example>{item.example}</Example>
+          {!isNumber && (
+            <>
+              <Keyboard>{item.name}</Keyboard>
+              <Example>{item.example}</Example>
+            </>
+          )}
           <StyledAudio data-key={item.keycode} src={item.src} ref={audioRef} />
           <Image
-            src={`images/${type}/${item.name}.${imageFileExtension}`}
+            src={`images/${type}/${item.name}.png`}
             alt={item.example}
+            $isNumber={isNumber}
           />
         </>
       ) : (

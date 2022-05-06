@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
   align-items: center;
   width: 10rem;
   height: 10rem;
-  background-color: #2979ff;
+  background-color: ${(props) => (props.$isNumber ? "transparent" : "#2979ff")};
   padding: 3.5rem 0.5rem;
   border-radius: 8px;
   cursor: pointer;
@@ -38,6 +38,14 @@ export const Image = styled.img`
   height: 100%;
   width: 100%;
   margin: 1rem;
+
+  ${(props) =>
+    props.$isNumber &&
+    `
+  border-radius: 8px;
+  width: 10rem;
+  height: 15rem;
+  `}
 `;
 
 export const Keyboard = styled.kbd``;
