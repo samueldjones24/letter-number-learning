@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <Wrapper>
       <Text>
-        Images: ©{" "}
+        © Images:{" "}
         <Link
           href="https://alphabetimals.com/"
           target="_blank"
@@ -23,7 +23,18 @@ export const Footer = () => {
       </Text>
       <Text>|</Text>
       <Text>
-        Code: ©{" "}
+        Audio:{" "}
+        <Link
+          href="https://freesound.org/people/tim.kahn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Freesound
+        </Link>
+      </Text>
+      <Text>|</Text>
+      <Text>
+        Code:{" "}
         <Link
           href="https://twitter.com/samueldjones"
           target="_blank"

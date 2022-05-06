@@ -20,13 +20,14 @@ function App() {
             </Card>
           </Link>
           <Link to="/numbers">
-            <Card>
+            <Card $isNumber={true}>
               <Text>Numbers</Text>
-              <Image src={`images/numbers/1.png`} alt="one" />
+              <Image src={`images/numbers/1.png`} alt="one" $isNumber={true} />
             </Card>
           </Link>
         </CardWrapper>
       </TextWrapper>
+      <Text>💡 Tip for Mum or Dad: turn up the sound 🔊</Text>
     </>
   );
 }
