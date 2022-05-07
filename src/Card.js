@@ -31,7 +31,6 @@ export const Card = ({ item, type, spacebarKeycode }) => {
     if (keyPressed && inViewport) audioRefCurrent.play();
 
     return () => {
-      audioRefCurrent.pause();
       audioRefCurrent.currentTime = 0;
     };
   }, [inViewport, keyPressed]);
