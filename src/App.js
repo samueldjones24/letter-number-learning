@@ -27,7 +27,7 @@ function App() {
           </Link>
         </CardWrapper>
       </TextWrapper>
-      <Text>💡 Tip for Mum or Dad: turn up the sound 🔊</Text>
+      <Text>💡 Tip for grown ups: turn up the sound 🔊</Text>
     </>
   );
 }

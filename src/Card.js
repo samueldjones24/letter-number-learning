@@ -27,7 +27,6 @@ export const Card = ({ item, type, spacebarKeycode }) => {
 
     if (keyPressed && !inViewport) {
       executeScroll();
-      audioRefCurrent.play();
     }
     if (keyPressed && inViewport) audioRefCurrent.play();
 
