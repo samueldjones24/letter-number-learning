@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 `;

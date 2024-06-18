@@ -36,7 +36,7 @@ export const Footer = () => {
       <Text>
         Code:{" "}
         <Link
-          href="https://twitter.com/samueldjones"
+          href="https://www.linkedin.com/in/samueldjones24/"
           target="_blank"
           rel="noopener noreferrer"
         >

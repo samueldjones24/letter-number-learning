@@ -32,6 +32,8 @@ export const Letters = () => {
 
   return (
     <Wrapper>
+      <div style={{display: 'flex', gap: '1rem', alignItems: 'center', }}>
+      <label htmlFor="search-letts">Search:</label>
       <SearchInput
         type="text"
         id="search-letters"
@@ -39,6 +41,7 @@ export const Letters = () => {
         onChange={(e) => setSearchInput(e.target.value)}
         placeholder="Try spelling your name..."
       />
+      </div>
       <LettersWrapper>
         {letters.map((letter) => {
           return (

@@ -14,6 +14,10 @@ export const Title = styled.h1`
   color: #2979ff;
 `;
 
+export const Subtitle = styled.h2`
+  color: #2979ff;
+`;
+
 export const HomeLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
