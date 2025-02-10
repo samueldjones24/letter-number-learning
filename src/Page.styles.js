@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.main`
+export const PageWrapper = styled.main`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -10,7 +10,7 @@ export const Wrapper = styled.main`
 
 export const SearchInput = styled.input`
   height: 48px;
-  width: 250px;
+  width: 400px;
   border-radius: 4px;
   border: 1px solid #2979ff;
   font-size: 1.3rem;
@@ -27,7 +27,7 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const LettersWrapper = styled.div`
+export const ItemsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

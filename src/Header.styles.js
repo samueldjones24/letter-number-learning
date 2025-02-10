@@ -12,6 +12,8 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   color: #2979ff;
+  border-bottom: 6px dashed #ffc629;;
+  margin-bottom: 0;
 `;
 
 export const Subtitle = styled.h2`

@@ -13,6 +13,11 @@ export const CardWrapper = styled.div`
   cursor: pointer;
   transition: all 0.1s ease;
 
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
   &:active,
   :focus,
   :visited,
@@ -23,15 +28,6 @@ export const CardWrapper = styled.div`
     box-shadow: 0px 0px 30px #ffff8d;
     transform: scale(1.2);
   }
-
-  ${(props) =>
-    props.$keyPressed &&
-    `
-    outline: none;
-    border-color: #ffff8d;
-    box-shadow: 0px 0px 30px #ffff8d;
-    transform: scale(1.2);
-    `}
 `;
 
 export const Image = styled.img`
@@ -48,8 +44,6 @@ export const Image = styled.img`
   `}
 `;
 
-export const Keyboard = styled.kbd``;
+export const LetterText = styled.kbd``
 
-export const StyledAudio = styled.audio``;
-
-export const Example = styled.span``;
+export const Text = styled.p``;

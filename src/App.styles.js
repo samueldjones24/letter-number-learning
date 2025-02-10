@@ -11,10 +11,11 @@ export const CardWrapper = styled.div`
   }
 `;
 
-export const TextWrapper = styled.div`
+export const Wrapper = styled.div`
   max-width: 800px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
   line-height: 1.4;
 `;
@@ -48,7 +49,7 @@ export const Image = styled.img`
     `
   border-radius: 8px;
   width: 10rem;
-  height: 13rem;
+  height: 12.8rem;
   margin: 0;
   `}
 `;
