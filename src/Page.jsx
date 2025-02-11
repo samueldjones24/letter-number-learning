@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { NUMBERS, INITIAL_LETTERS } from "./constants";
+import { NUMBERS, INITIAL_LETTERS, SPACEBAR } from "./constants";
 import { Card } from "./Card";
 import { PageWrapper, SearchInput, ItemsWrapper } from "./Page.styles";
 
@@ -28,7 +28,7 @@ export const Page = ({ type }) => {
 
     const searchedValues = splitArray
       .map((element) =>
-        initialData.find(
+        [...initialData, SPACEBAR].find(
           ({ name }) => name.toLowerCase() === element.toLowerCase()
         )
       )
@@ -55,7 +55,6 @@ export const Page = ({ type }) => {
       const foundLetter = initialData.find((letter) => letter.name === key);
 
       if (foundLetter && foundLetter.src) {
-        console.log();
         if (audioRef.current) {
           audioRef.current.src = foundLetter.src; // Update audio source
           audioRef.current
